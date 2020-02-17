@@ -1,0 +1,32 @@
+$(document).ready(function(){
+
+    //Making Caret rotate
+    $('.caret').click(function(e){
+        $(this).toggleClass('active');
+    })
+
+
+    // Giving top menu icons background color on click
+    // Making hidden submenu appear
+    $('.top-nav > .user > span').click(function(e){
+        $(this).toggleClass('show').siblings().removeClass('show');
+
+        $('.top-nav > .user > span >ul').toggleClass('show');
+    })
+    
+    $('.top-nav > .user > span > ul').click(function(event){
+        event.stopPropagation();
+        $('div#three').toggle()
+      });
+    
+      //Collapse Sidebar
+      $('.collapse-icon').click(function(){
+          $('.sidebar').toggleClass('sidebar-collapse');
+          $('.main-side-content').toggleClass('main-collapse').toggleClass('col-md-9');
+          
+          if($('.sub-menu').hasClass('show')){
+            $('.caret').click();
+          }
+      })
+
+    })
