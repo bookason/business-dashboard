@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <!-- End of Google fonts -->
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/03d105c57e.js" crossorigin="anonymous"></script>
+    <!-- End of font awesome -->
+
+    <!-- Chart Js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <!-- End of chart js -->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styling/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="styling/style.css">
+
+    <link rel="stylesheet" href="styling/responsive.css">
+    <!-- End of stylesheets -->
+
+    <title>Dashboard</title>
+</head>
+<body>
+
+<!-- Main body container -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="mobile-overlay d-md-none"></div>
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar px-4" id="sideBar">
+
+                <div class="logo-collapse d-flex justify-content-between align-items-center mt-4">
+                    <a href="" class="navbar-brand"> Logo</a>
+                    <span class="collapse-icon d-none d-md-block"> <i class="text-white fa-2x fas fa-angle-left"></i></span> 
+                    <span class="d-md-none"> <i class="bar text-white fas fa-times-circle fa-2x"></i> </span>
+                </div>
+
+               <div class="text-white mt-5">
+                   <ul class="vertical-nav navbar-nav flex-column">
+                       <li class=" py-4 nav-item"> <i class=" text-white fas fa-home mr-3 "></i> <span> Dashboard</span>  <i class="caret ml-2 text-white fas fa-caret-right" data-toggle ="collapse" data-target="#Dashboard"></i>
+                    
+                       </li>
+
+                       <li class="sub-menu nav-item collapse p-3" id="Dashboard" >
+                        <ul class="list-unstyled" >
+                            <li> <a href="#" class="text-light"> Stream </a> </li>
+                            <li> <a href="#" class="text-light"> Sales update </a></li>
+                            <li> <a href="#" class="text-light"> Orders </a> </li>
+                        </ul>
+                       </li>
+
+                       <li class="nav-item heading"> Report</li>
+
+                       <li class=" py-4 nav-item"> <i class="mr-3 fas fa-chart-pie"></i> <span> Charts </span> <i class="caret ml-2 text-white fas fa-caret-right" data-toggle="collapse" data-target="#Charts"></i> 
+                       </li>
+
+                       <li class="sub-menu nav-item collapse p-3" id="Charts">
+                        <ul class="list-unstyled" >
+                            <li> <a href="#" class="text-light"> Month Chart </a> </li>
+                            <li> <a href="#" class="text-light"> Sales Chart </a></li>
+                            <li> <a href="#" class="text-light"> Progress Chart </a> </li>
+                        </ul>
+                       </li>
+                       
+
+                       <li class=" py-4 nav-item"> <i class="mr-3 fas fa-chart-bar"></i> <span> KPIs </span> <i class="caret ml-2 text-white fas fa-caret-right" data-toggle="collapse" data-target="#KPI"></i> </li>
+
+                       <li class="sub-menu nav-item collapse p-3" id="KPI">
+                        <ul class="list-unstyled" >
+                            <li> <a href="#" class="text-light"> KPI Mised</a> </li>
+                            <li> <a href="#" class="text-light"> Monthly Performance </a></li>
+                            <li> <a href="#" class="text-light"> Team's Progress </a> </li>
+                            <li> <a href="#" class="text-light"> Upcoming</a> </li>
+                        </ul>
+                       </li>
+
+                       <li class="nav-item heading"> Sales</li>
+
+                       <li class=" py-4 nav-item"> <i class="mr-3 fas fa-hand-holding-usd"></i> <span> Revenues </span> <i class="caret ml-2 text-white fas fa-caret-right" data-target="#Revenues" data-toggle="collapse"></i> </li>
+
+                       <li class="sub-menu nav-item collapse p-3" id="Revenues">
+                        <ul class="list-unstyled" >
+                            <li> <a href="#" class="text-light"> Upcoming Revenues</a> </li>
+                            <li> <a href="#" class="text-light"> In the Bank</a></li>
+                            <li> <a href="#" class="text-light"> Uncleared Invoices </a> </li>
+                            
+                        </ul>
+                       </li>
+
+                       <li class=" py-4 nav-item"> <i class="mr-3 fas fa-business-time"></i> <span> Business Leads </span> <i class="caret ml-2 text-white fas fa-caret-right" data-toggle="collapse" data-target="#Business"></i> </li>
+
+                       <li class="sub-menu nav-item collapse p-3" id="Business">
+                        <ul class="list-unstyled" >
+                            <li> <a href="#" class="text-light"> Clients on Board</a> </li>
+                            <li> <a href="#" class="text-light"> Sales Funnel</a></li>
+                            <li> <a href="#" class="text-light"> Qualified Leads </a> </li>
+                            
+                        </ul>
+                       </li>
+
+                       <li class=" py-4 nav-item"> <i class="mr-3 fas fa-bullhorn"></i> <span> Marketing </span> <i class="caret ml-2 text-white fas fa-caret-right" data-toggle="collapse" data-target="#Marketing"></i> </li>
+
+                       
+                       <li class="sub-menu nav-item collapse p-3" id="Marketing">
+                        <ul class="list-unstyled" >
+                            <li> <a href="#" class="text-light"> Ads Performance</a> </li>
+                            <li> <a href="#" class="text-light"> Digital Channels</a></li>
+                            <li> <a href="#" class="text-light"> Tv Ads </a> </li>
+                            
+                        </ul>
+                       </li>
+
+                       <li class=" py-4 nav-item"> <i class="mr-3 fas fa-user-friends"></i> <span> Team </span> <i class="caret ml-2 text-white fas fa-caret-right" data-target="#Team" data-toggle="collapse"></i> </li>
+
+                       <li class="sub-menu nav-item collapse p-3" id="Team">
+                        <ul class="list-unstyled" >
+                            <li> <a href="#" class="text-light"> My Team</a> </li>
+                            <li> <a href="#" class="text-light"> Join Request</a></li>
+                            <li> <a href="#" class="text-light"> Leadership Board </a> </li>
+                            
+                        </ul>
+                       </li>
+
+                       
+                   </ul>
+               </div> 
+            </div>
+            <!-- End of sidebar -->
+
+
+
+            <!-- Main side content -->
+
+            <div class="main-side-content col-md-9 ml-auto p-0">
+
+                <!-- Top Navigation Menu -->
+                <div class="main-top position-relative">
+                <div class="top-nav-mobile bg-white d-md-none px-4 py-2">
+                    <div class="text-right">
+                        <i class="bar fas fa-bars mr-4"></i>
+                        <i class="ellipsis fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="top-nav py-3 px-4 bg-white">
+                <div>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control mr-1" placeholder="Search...">
+                            <div class="input-group-append align-items-center">
+                                <i class=" fas fa-search"></i>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="d-flex justify-content-around align-items-center ml-3 user">
+                    <span id= "2" class="toggler" > <i id ="2" class="fas fa-bell" id="inner"></i> 
+                    
+                        <ul class="list-unstyled" inner = "three">
+                            <li> <a class="text-white d-block pl-3 py-4" style="background: #6986b1;"> Notifications</li></a>
+                            <li> <a class="d-block pl-3 py-2"><span><img src="images/client1.png" alt=""></span> <span> Christine messaged you </span></a ></li>
+                            <li> <a class="d-block pl-3 py-2"><span><img src="images/client2.png" alt=""></span> <span>Greg accepted your invitation </span> </a></li>
+                           
+                            <li> <a class="d-block pl-3 py-2"><span> <img src="images/client3.png" alt=""></span> <span> Carol checked your profile</span></a></li>
+                            <a class="d-block pb-4 py-2 text-center text-white" style="background-color: #6986b1;" href="#"> Check all Notifications</a>
+                        </ul>
+                    
+                    </span>
+                    <span id="2" class="toggler"> <i id="2" class="fas fa-cog"></i> 
+                    
+                        <ul  class="list-unstyled pb-4" inner = "three">
+                            <li id="good"> <a id="three-a" class="text-white d-block pl-3 py-4" style="background: #6986b1;">Preferences</li></a>
+                            <li> <a id="three-a" class="d-block pl-3 py-2"><span><i class="fas fa-edit mr-3"></i></span> Theme</a></li>
+                            <li> <a id="three-a" class="d-block pl-3 py-2"><span><i class="far fa-credit-card mr-3"></i></span> Billing</a></li>
+                           
+                            <li> <a id="three-a" class="d-block pl-3 py-2"><span> <i class="fas fa-comments mr-3"></i> Messaging</span></a></li>
+                        </ul>
+                    
+                    </span>
+                    <span class="toggler admin" id="2">
+                         Hi, Davids <img src="images/pasport.jpg" alt="" class="img-fluid">
+
+                        <ul id="sub" class="list-unstyled pb-4" id = "three">
+                            <li> <a id="three-a" class="text-white d-block pl-3 py-4" style="background: #6986b1;">Davids Greene</li></a>
+                            <li> <a id="three-a" class="d-block pl-3 py-2"><span><i class="fas fa-user mr-3"></i></span> Account</a></li>
+                            <li> <a id="three-a" class="d-block pl-3 py-2"><span><i class="fas fa-envelope mr-3"></i></span> Messages</a></li>
+                            <li> <a id="three-a" class="d-block pl-3 py-2"><span> <i class="fas fa-clipboard-check mr-3"></i> </span> Todo</a></li>
+                            <li> <a id="three-a" class="d-block pl-3 py-2"><span> <i class="fas fa-sign-out-alt mr-3"></i> Sign out</span></a></li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+            </div>
+            <!-- End of top navigation menu -->
+
+
+            <div class="container-fluid p-5">
+
+                
+                <div class="row first-row justify-content-between">
+
+                    <div class="col-md-6 col-xl-3 p-2">
+                        <div>
+                        <p> Pending Orders</p>
+                        <h3> 3,214</h3>
+                        <p class="badge"> <span class="text-success mr-2"> <i class="fas fa-caret-up"></i> 3.45%</span> from last week</p>
+                        </div>
+                        </div>
+
+                    <div class="col-md-6 col-xl-3 p-2 ">
+                        <div>
+                        <p> Weekly Revenue</p>
+                        <h3> $40,407</h3>
+                        <p class="badge"> <span class="text-danger mr-2"> <i class="fas fa-caret-down"></i> 2.14%</span> from last week</p>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 p-2">
+                        <div>
+                        <p> Qualified Leads</p>
+                        <h3> 257</h3>
+                        <p class="badge"> <span class="text-success mr-2"> <i class="fas fa-caret-up"></i> 1.08%</span> from last month</p>
+                    </div>
+                    </div>
+
+                    <div class="col-md-6 col-xl-3 p-2 ">
+                        <div>
+                        <p> Sales this Month </p>
+                        <h3> $61,203</h3>
+                        <p class="badge"> <span class="text-danger mr-2"> <i class="fas fa-caret-up"></i> 2.08%</span> from last month</p>
+                        </div>
+                    </div>
+                </div>
+
+               
+                <!-- Second row -->
+                <div class="row px-2 py-4">
+
+                    <div class="col-lg-8 pl-0 pr-0 pr-lg-3 mb-4 mb-lg-0">
+                        
+                        <div class="bg-white py-4 px-3 second-row">
+                            <p class="mb-5 tex"> <span class="d-block">Jan - July </span> <span class="badge"> Sales in Thousands </span></p>
+                            <canvas id="myChart"></canvas>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-lg-4 py-4 px-3 bg-white second-row">
+                        <p class="mb-4"> Sales by Countries</p>
+                        
+                            <p class=""> United States</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                aria-valuemin="0" aria-valuemax="100" style="width:52%">
+                                  <span>52%</span>
+                                </div>
+                            </div>
+
+                            <p class=""> China</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                aria-valuemin="0" aria-valuemax="100" style="width:31%">
+                                  <span>31%</span>
+                                </div>
+                            </div>
+
+                            <p class=""> Spain</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                aria-valuemin="0" aria-valuemax="100" style="width:8%">
+                                  <span>8%</span>
+                                </div>
+                            </div>
+
+                            <p class=""> United Kingdom</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                aria-valuemin="0" aria-valuemax="100" style="width:13%">
+                                  <span>13%</span>
+                                </div>
+                            </div>
+
+                            <p class=""> Canada</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                aria-valuemin="0" aria-valuemax="100" style="width:18%">
+                                  <span>18%</span>
+                                </div>
+                            </div>
+                </div>
+            </div>
+             <!-- End of Second row -->
+
+
+             <!-- Third row -->
+             <div class="row px-2 py-2">
+
+                <div class="col-lg-8 pl-0 pr-0 pr-lg-3 mb-4 mb-lg-0">
+                    <div class="second-row bg-white pb-5">
+                        <p class="mb-5"> <span class="d-block "> Jan - July</span> <span class="badge"> Revenue in Thousands</span> </p>
+                        <canvas id="lineChart" class="mb-4"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 second-row ">
+
+                    <div class="">
+                        <div class="d-flex align-items-center justify-content-between">
+                        <p class="d-inline-block"> <span class="d-block"> Best Selling Products </span> <span class="badge"> Jan - July</span> </p>
+                        <p><a href="#" class="d-inline-block align-middle" style="color:#6986b1;"> <span class="d-block"> <i class="fas fa-file-export"></i> </span> <span class="badge"> Export CSV</span> </a></p>
+                        </div>
+
+                        <table class="table table-borderless">
+                            <thead class="bg-light border-bottom">
+                                <tr>
+                                    <th scope="col"> Product</th>
+                                    <th scope="col text-right"> Revenue</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-bottom">
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="images/3.jpg" class="border border-100" width="45" alt="">
+                                            <div class="d-inline-block ml-2">
+                                                <p>Item 1</p>
+                                                <p class="badge"> SKU-1002</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-right">
+                                        <p> $130,133</p>
+                                    </td>
+                                </tr>
+
+                                <tr class="border-bottom">
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="images/cam.jpg" class="border border-200" width="45" alt="">
+                                            <div class="d-inline-block ml-2">
+                                                <p>Item 2</p>
+                                                <p class="badge"> SKU-1009</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-right">
+                                        <p> $157,466</p>
+                                    </td>
+                                </tr>
+
+                                <tr class="border-bottom">
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="images/hermes-rivera-770598-unsplash.jpg" class="border border-200" width="45" alt="">
+                                            <div class="d-inline-block ml-2">
+                                                <p>Item 3</p>
+                                                <p class="badge"> SKU-1102</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-right">
+                                        <p> $80,453</p>
+                                    </td>
+                                </tr>
+
+                                <tr class="border-bottom">
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="images/black-wrist-watch_1057-4040.jpg" class="border border-100" width="45" alt="">
+                                            <div class="d-inline-block ml-2">
+                                                <p>Item 4</p>
+                                                <p class="badge"> SKU-1015</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-right">
+                                        <p> $300,057</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Fourth Row -->
+                <div class="row px-2 py-4">
+
+                    <div class="col second-row bg-white">
+                        <nav class="row pr-3">
+                            <div class="col-3 col-lg-6">
+                                <p> Performance</p>
+                            </div>
+
+                            <div class="col-9 col-lg-6 nav nav-tabs justify-content-end" id="nav-tab" role="tablist">
+                              <a class="active mr-2 mr-sm-4" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Team</a>
+                              <a class="mr-2 mr-sm-4" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Finance</a>
+                              <a class="" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Vendor</a>
+                            </div>
+                          </nav>
+                          <div class="mt-5 py-3 tab-content" id="nav-tabContent">
+                            <div class="col col-lg-10 mx-auto tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <canvas id="doughChart"></canvas>
+                            </div>
+                            <div class="col col-lg-10 mx-auto tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <canvas id="managementChart"></canvas>
+                            </div>
+                            <div class="col col-lg-10 mx-auto tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                <canvas id="vendorChart"></canvas>
+                            </div>
+                          </div>
+                    </div>
+
+                </div>
+                <!-- End of Fourth Row -->
+
+                <!-- Fifth Row -->
+
+                <div class="fifth row px-2 py-2 mb-5">
+
+                    <div class="col-lg-6 mb-4 pr-0 pr-lg-3 mb-lg-0 pl-0">
+                        <div class="second-row recent-activity">
+                            <p> Recent Activities</p>
+                            <div class="recent-item pb-3 mt-5">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="images/client1.png" width = "50" alt="">
+                                    </div>
+                                    <div class="col-10 pl-4 pl-sm-0">
+                                        <p> Christine Harris </p>
+                                        <p> Updated the sales database</p>
+                                        <p> 2hrs ago</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="recent-item pb-3">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="images/client2.png" width = "50" alt="">
+                                    </div>
+                                    <div class="col-10 pl-4 pl-sm-0">
+                                        <p> Greg Samuel </p>
+                                        <p> Created a ticket</p>
+                                        <p> 2hrs ago</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="recent-item pb-3">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="images/client3.png" width = "50" alt="">
+                                    </div>
+                                    <div class="col-10 pl-4 pl-sm-0">
+                                        <p> Carol Baker </p>
+                                        <p> Posted a memo</p>
+                                        <p> 2hrs ago</p>
+                                    </div>
+                                </div>
+                                <p class="text-right"> <a href="#">View All</a> </p>
+                            </div>
+
+                            
+                           
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-lg-6  second-row">
+                        <p> Active Users</p>
+                        <div class="recent-activity pr-3 recent-second mt-5">
+
+                            <div class="recent-item pb-3 pr-2">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="avatar"> <img src="images/client3.png" class="img-fluid" alt=""></div>
+                                       
+                                    </div>
+                                    <div class="col-10 pl-4 pl-sm-0">
+                                        <p> Carol Baker </p>
+                                        <p> Project Manager</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="recent-item pb-3">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="avatar"> <img src="images/client1.png" class="img-fluid" alt=""></div>
+                                        
+                                    </div>
+                                    <div class="col-10 pl-4 pl-sm-0">
+                                        <p> Christine Harris </p>
+                                        <p> Human Resource</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="recent-item pb-3">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="avatar">  <img src="images/client2.png" class="img-fluid" alt=""></div>
+                                      
+                                    </div>
+                                    <div class="col-10 pl-4 pl-sm-0">
+                                        <p> Greg Samuel </p>
+                                        <p> System Administrator</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="recent-item pb-3">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="avatar"> <img src="images/pasport.jpg" class="img-fluid" alt=""></div>
+                                        
+                                    </div>
+                                    <div class="col-10 pl-4 pl-sm-0">
+                                        <p> Davids Greene </p>
+                                        <p> Developer</p>
+                                        
+                                    </div>
+                                </div>
+                                <p class="text-right"> <a href="#">View All</a> </p>
+                            </div>
+
+                            
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- End of Fifth Row -->
+
+                <!-- Footer row -->
+
+                <div class="row bg-white py-3 px-5 last-row justify-content-between">
+                    <span> Copyright &copy; <span id="year"></span></span>
+                    <span> Designed by <a href="https://christopherike.com" target="_blank"> Christopher Ike</a></span>
+                </div>
+
+                <!-- End of Footer row -->
+
+            </div>
+
+            <!-- End Main side content -->
+        </div>
+    </div>
+<!-- End of Main Body container -->
+    
+<script src="js/jQuery-3.3.1.min.js"></script> 
+<script src="js/popper.js"></script>  
+<script src="js/bootstrap.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
